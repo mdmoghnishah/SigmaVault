@@ -95,25 +95,25 @@ const Home = () => {
     <>
       <Navbar />
       <MarketData />
-      <div className="relative w-full min-h-[400px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[584px] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 py-10 sm:py-12 bg-gradient-to-r from-[#0D3142] to-[#128442] overflow-hidden">
+      <div className="hidden sm:flex relative w-full min-h-[400px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[584px] items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 py-10 sm:py-12 bg-gradient-to-r from-[#0D3142] to-[#128442] overflow-hidden">
+  {/* Background Image with Opacity */}
+  <div
+    className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-35 z-0"
+    style={{
+      backgroundImage: `url(${bg})`,
+    }}
+  ></div>
 
-        {/* Background Image with Opacity */}
-        <div
-          className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-35 z-0"
-          style={{
-            backgroundImage: `url(${bg})`,
-          }}
-        ></div>
+  {/* Foreground Image or Content */}
+  <div className="relative z-10 w-full max-w-[884px] px-2 sm:px-4">
+    <img
+      src={bgimage}
+      alt="Foreground"
+      className="w-full h-auto object-contain"
+    />
+  </div>
+</div>
 
-        {/* Foreground Image or Content */}
-        <div className="relative z-10 w-full max-w-[884px] px-2 sm:px-4">
-          <img
-            src={bgimage}
-            alt="Foreground"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-      </div>
       <section className="w-full bg-white px-4 sm:px-6 lg:px-16 py-16">
         {/* Section Heading */}
         <div className="max-w-[1240px] mx-auto text-center">
@@ -303,9 +303,9 @@ const Home = () => {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-10 md:px-20 bg-[#F7FFFA]">
         <div className='flex gap-2 items-center'>
-        <Clock3 className="w-6 h-6 text-[#06C752] mb-2" />
-        <h2 className="text-2xl font-bold mb-4 text-center">Top Holdings</h2>
-          </div>
+          <Clock3 className="w-6 h-6 text-[#06C752] mb-2" />
+          <h2 className="text-2xl font-bold mb-4 text-center">Top Holdings</h2>
+        </div>
 
         <div className="space-y-3">
           {holdingsData.map((item, index) => (
