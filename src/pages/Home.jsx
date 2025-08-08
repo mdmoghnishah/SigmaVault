@@ -96,23 +96,23 @@ const Home = () => {
       <Navbar />
       <MarketData />
       <div className="hidden sm:flex relative w-full min-h-[400px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[584px] items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 py-10 sm:py-12 bg-gradient-to-r from-[#0D3142] to-[#128442] overflow-hidden">
-  {/* Background Image with Opacity */}
-  <div
-    className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-35 z-0"
-    style={{
-      backgroundImage: `url(${bg})`,
-    }}
-  ></div>
+        {/* Background Image with Opacity */}
+        <div
+          className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-35 z-0"
+          style={{
+            backgroundImage: `url(${bg})`,
+          }}
+        ></div>
 
-  {/* Foreground Image or Content */}
-  <div className="relative z-10 w-full max-w-[884px] px-2 sm:px-4">
-    <img
-      src={bgimage}
-      alt="Foreground"
-      className="w-full h-auto object-contain"
-    />
-  </div>
-</div>
+        {/* Foreground Image or Content */}
+        <div className="relative z-10 w-full max-w-[884px] px-2 sm:px-4">
+          <img
+            src={bgimage}
+            alt="Foreground"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
 
       <section className="w-full bg-white px-4 sm:px-6 lg:px-16 py-16">
         {/* Section Heading */}
@@ -245,58 +245,57 @@ const Home = () => {
       </section>
 
 
-      <section id="portfolio-performance" className="w-full px-4 sm:px-6 lg:px-8 py-16">
-        {/* Header */}
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-[28px] md:text-[40px] font-bold text-black flex justify-center items-center gap-2 mb-4">
+   <section id="portfolio-performance" className="w-full px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
+  {/* Header */}
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-[24px] sm:text-[28px] md:text-[40px] font-bold text-black flex justify-center items-center gap-2 mb-4">
+      Portfolio Performance Tracker
+    </h2>
+    <p className="text-gray-600 max-w-2xl mx-auto mb-10 text-sm sm:text-base">
+      Stay ahead with our expert analysis, market research, and actionable insights from our team of seasoned investment professionals.
+    </p>
+  </div>
 
-            Portfolio Performance Tracker
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-10">
-            Stay ahead with our expert analysis, market research, and actionable insights from our team of seasoned investment professionals.
-          </p>
-        </div>
-        <div className="px-6 py-4">
-          <h2 className="text-[28px] md:text-[30px] font-bold text-black text-left flex items-center gap-2">
-            <Target className="w-8 h-8 md:w-10 md:h-10 text-[#06C752]" />
-            Portfolio Overview
-          </h2>
-        </div>
+  <div className="px-4 sm:px-6 py-4">
+    <h2 className="text-[22px] sm:text-[26px] md:text-[30px] font-bold text-black text-left flex items-center gap-2">
+      <Target className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[#06C752]" />
+      Portfolio Overview
+    </h2>
+  </div>
 
-        <div className="w-full flex flex-wrap gap-x-10 md:gap-x-20 text-sm px-6 md:px-16">
-          {[
-            ['Total Value', '$1,234,363'],
-            ['Today', '$1,234,363'],
-            ['Today %', '+1.75%', 'text-green-600'],
-            ['YTD Return', '+12.75%', 'text-green-600']
-          ].map(([label, value, color]) => (
-            <div className="flex flex-col min-w-[120px] sm:min-w-[140px]" key={label}>
-              <p className={`text-xl font-semibold ${color || 'text-black'}`}>{value}</p>
-              <p className="text-gray-500">{label}</p>
-            </div>
-          ))}
-        </div>
+  {/* Stats */}
+  <div className="w-full flex flex-wrap gap-x-8 sm:gap-x-10 md:gap-x-20 gap-y-6 text-sm px-4 sm:px-6 md:px-16">
+    {[
+      ['Total Value', '$1,234,363'],
+      ['Today', '$1,234,363'],
+      ['Today %', '+1.75%', 'text-green-600'],
+      ['YTD Return', '+12.75%', 'text-green-600']
+    ].map(([label, value, color]) => (
+      <div className="flex flex-col min-w-[100px] sm:min-w-[120px]" key={label}>
+        <p className={`text-lg sm:text-xl font-semibold ${color || 'text-black'}`}>{value}</p>
+        <p className="text-gray-500 text-xs sm:text-sm">{label}</p>
+      </div>
+    ))}
+  </div>
 
-        {/* Image Section */}
-        <div className="mx-auto flex justify-center gap-8 w-full">
+  {/* Image Section */}
+  <div className="mx-auto flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 w-full px-4 mt-10">
+    {/* Main Image */}
+    <img
+      src={dashboard}
+      alt="Dashboard"
+      className="w-full sm:w-4/5 md:w-2/3 h-auto object-contain rounded-lg max-w-[700px]"
+    />
 
-          {/* Main Image */}
-          <img
-            src={dashboard}
-            alt="Dashboard"
-            className="w-2/3 h-auto object-contain rounded-lg"
-          />
+    {/* Overlay Image */}
+    <img
+      src={dashboardoverlay}
+      alt="Overlay"
+      className="w-[100px] sm:w-[150px] md:w-[250px] lg:w-[300px] h-auto object-contain"
+    />
+  </div>
+</section>
 
-          {/* Overlay Image */}
-          <img
-            src={dashboardoverlay}
-            alt="Overlay"
-            className="w-[120px] sm:w-[180px] md:w-[300px] h-auto object-contain z-2"
-          />
-        </div>
-
-
-      </section>
 
 
 

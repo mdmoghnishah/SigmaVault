@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import MarketData from '../components/MarketData'
 import Footer from '../components/Footer';
+import Security from '../components/Security';
 import bgimg from '../assets/bgimage.jpg';
 import {
   ArrowRight,
@@ -135,55 +136,13 @@ const MarketInsights = () => {
             Fiduciary Duty, Transparent Fees, Best Execution
           </div>
         </div>
-
-        {/* Highlighted Card */}
-        <div className="bg-[#F7FFFA] border border-[#88EDB099] rounded-[20px] max-w-[1226px] w-full p-8 flex flex-col md:flex-row md:items-center">
-          <div className="flex-1 mb-6 md:mb-0">
-            <div className="font-poppins font-semibold text-2xl text-black mb-2">
-              Your Investment Security is Our Priority
-            </div>
-            <p className="font-poppins text-base text-black mb-4">
-              SigmaVault is committed to maintaining the highest standards of regulatory compliance and investment security. Our comprehensive approach ensures your assets are protected while providing transparent, fiduciary-level service.
-            </p>
-            <ul className="mb-6 space-y-2">
-              {securityPoints.slice(0, 3).map((pt) => (
-                <li key={pt} className="flex items-center font-sans text-base text-[#222]">
-                  <div className="w-[26px] h-[26px] rounded-full bg-[#C9F3DD] flex items-center justify-center mr-2">
-                    <Check size={16} color="#20bd6f" strokeWidth={3} />
-                  </div>
-                  {pt}
-                </li>
-              ))}
-              {/* Last item and right-side metric/button */}
-              <li className="flex justify-between items-end w-full gap-4">
-                <div className="flex items-center font-sans text-base text-[#222] mb-4">
-                  <div className="w-[26px] h-[26px] rounded-full bg-[#C9F3DD] flex items-center justify-center mr-2 ">
-                    <Check size={16} color="#20bd6f" strokeWidth={3} />
-                  </div>
-                  24/7 fraud monitoring
-                </div>
-                {/* Right: Badge + Button */}
-                <div className="flex flex-row items-end gap-4 min-w-[230px] mb-2">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck size={24} color="#32C378" strokeWidth={2.5} />
-                    <div className="leading-tight">
-                      <div className="font-sans font-bold text-[18px] text-black">$2.5B+</div>
-                      <div className="font-sans text-[13px] text-[#333]">Assets Protected</div>
-                    </div>
-                  </div>
-                  <button className="flex items-center gap-2 border border-[#32C378] text-[#20bd6f] font-sans font-semibold rounded-full px-4 py-1.5 text-sm hover:bg-[#f4fff9] transition-all">
-                    <FilePlus size={16} color="#32C378" strokeWidth={2} />
-                    View Compliance Details
-                  </button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+{/* 
+        Highlighted Card */}
+        
       </div>
 
     </section>
-
+<Security/>
       <Footer />
     </>
   )
